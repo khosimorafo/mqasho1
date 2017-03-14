@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">feerlaroc-widgets</string>
+    <string name="str_dbkey_undefined">API/DB key undefined</string>
+</resources>

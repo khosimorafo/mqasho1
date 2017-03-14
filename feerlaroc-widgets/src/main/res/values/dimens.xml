@@ -1,0 +1,29 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Margins for Feerlaroc Progress Toolbar. -->
+    <dimen name="spot_size">10dp</dimen>
+    <dimen name="title_margin">10dp</dimen>
+    <dimen name="progress_margin">24dp</dimen>
+    <dimen name="progress_width">350dp</dimen>
+    <dimen name="margin_keypad_row">8dp</dimen>
+    <dimen name="keypad_circle_size">70dp</dimen>
+    <dimen name="keypad_circle_size_small">50dp</dimen>
+
+    <!-- Loading -->
+
+    <dimen name="book_border">10dp</dimen>
+    <dimen name="page_border">5dp</dimen>
+    <dimen name="book_padding">15dp</dimen>
+
+    <!-- Number Picker -->
+    <dimen name="control_size">56dp</dimen>
+    <dimen name="min_height">32dp</dimen>
+    <dimen name="min_bar_width">0.8dp</dimen>
+    <dimen name="default_font_size">14sp</dimen>
+
+
+</resources>

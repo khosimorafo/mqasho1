@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">feerlaroc-zoho</string>
+
+    <string name="day_title_today">Today</string>
+    <string name="day_title_yesterday">Yesterday</string>
+    <string name="day_title_tomorrow">Tomorrow</string>
+</resources>
