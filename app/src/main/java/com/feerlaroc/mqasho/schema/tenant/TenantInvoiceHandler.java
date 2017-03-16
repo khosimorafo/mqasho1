@@ -85,14 +85,8 @@ public class TenantInvoiceHandler {
         mInvoiceDueDateSubject
                 .onNext(FeerlarocDateUtils.getSimpleDate(firstDayOfMonth.getMillis()));
 
-        CustomerObservable.getCustomerIDSubject().subscribe(new Action1<String>() {
-            @Override
-            public void call(String s) {
-
-                mInvoiceNumberSubject
-                        .onNext(s + "-" + FeerlarocDateUtils.getMonthAndYear(firstDayOfMonth));
-            }
-        });
+        CustomerObservable.getCustomerIDSubject().subscribe(s -> mInvoiceNumberSubject
+                .onNext(s + "-" + FeerlarocDateUtils.getMonthAndYear(firstDayOfMonth)));
 
 
 
