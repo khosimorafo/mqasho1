@@ -10,6 +10,7 @@ import com.feerlaroc.mqasho.R;
 import com.feerlaroc.mqasho.common.widget.CustomRelativeLayout;
 import com.feerlaroc.mqasho.schema.tenant.screen.CustomerEditScreen;
 import com.feerlaroc.widgets.ReactiveEditText;
+import com.feerlaroc.widgets.ReactiveTextView;
 import com.jakewharton.rxbinding.view.RxView;
 
 import javax.inject.Inject;
@@ -32,7 +33,8 @@ public class CustomerEditView extends CustomRelativeLayout<CustomerEditScreen.Pr
     @InjectView(R.id.toggle_customer_gender)    GenderToggleButton mGenderToggleButton;
     @InjectView(R.id.toggle_customer_site)      SiteToggleButton mSiteToggleButton;
 
-    @InjectView(R.id.btn_open_selector)         Button mRoomSelectorButton;
+    @InjectView(R.id.btn_open_selector)
+    RoomNumberReactiveTextView mRoomSelectorButton;
 
     Button mSaveTenantButton;
 
@@ -104,6 +106,11 @@ public class CustomerEditView extends CustomRelativeLayout<CustomerEditScreen.Pr
     public TextInputLayout getInputLayoutZAID(){
 
         return mInputLayoutZAID;
+    }
+
+    public RoomNumberReactiveTextView getRoomSelectorButton(){
+
+        return mRoomSelectorButton;
     }
 
     public GenderToggleButton getGenderToggleButton() {

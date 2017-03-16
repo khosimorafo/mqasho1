@@ -7,10 +7,13 @@ import android.widget.FrameLayout;
 import com.feerlaroc.mqasho.R;
 import com.feerlaroc.mqasho.common.widget.CustomLinearLayout;
 import com.feerlaroc.mqasho.schema.tenant.CustomerEditHandler;
+import com.feerlaroc.mqasho.schema.tenant.CustomerObservable;
 import com.feerlaroc.mqasho.schema.tenant.screen.TenantPropertySelectorScreen;
 import com.feerlaroc.widgets.ReactiveTextView;
 import com.feerlaroc.widgets.ReactiveWheelView;
 import com.feerlaroc.widgets.view.WheelView;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,6 +22,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.InjectView;
+import rx.functions.Action1;
 
 public class TenantPropertySelectorView extends CustomLinearLayout<TenantPropertySelectorScreen.Presenter> {
 
@@ -56,8 +60,29 @@ public class TenantPropertySelectorView extends CustomLinearLayout<TenantPropert
 
         mRoomNumberSelector.setOffset(1);
         mRoomNumberSelector.setItems(newList);
-        mRoomNumberSelector.setSeletion(3);
+        mRoomNumberSelector.setSeletion(1);
 
+        setSelections();
+
+    }
+
+    private void setSelections(){
+
+        CustomerObservable.getCustomerRoomSubject().subscribe(new Action1<String>() {
+            @Override
+            public void call(String s) {
+
+                int i = s.indexOf("-"); // 4
+
+                String _block = s.substring(0, i); // from 0 to the appearance of the space
+                String _room = s.substring(i+1); // after the space to the rest of the line
+
+                mBlockSelectorToggleButton.updateValue(_block);
+                mRoomNumberSelector.setSeletionText(_room);
+            }
+        });
+
+        mWheelHeader.subscribeTo(CustomerObservable.getCustomerSiteSubject());
     }
 
     public ReactiveWheelView getRoomNumberSelector(){

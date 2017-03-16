@@ -200,7 +200,4 @@ public class CustomerObservable {
     public static PublishSubject<List<Map<String, Object>>> getCustomerPaymentsSubject() {
         return mCustomerPaymentsSubject;
     }
-
-
-
 }

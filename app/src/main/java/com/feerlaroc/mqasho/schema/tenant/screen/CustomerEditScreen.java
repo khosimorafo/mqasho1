@@ -120,6 +120,9 @@ public class CustomerEditScreen extends Path{
 
             getView().getSiteToggleButton()
                     .subscribeTo(CustomerObservable.getCustomerSiteSubject());
+
+            getView().getRoomSelectorButton()
+                    .subscribeTo(CustomerObservable.getCustomerRoomSubject());
         }
 
         public void openBlockSelector() {

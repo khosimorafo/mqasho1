@@ -5,6 +5,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
+import com.feerlaroc.widgets.view.FeerlarocToggleButton;
+
 import org.honorato.multistatetogglebutton.MultiStateToggleButton;
 import org.honorato.multistatetogglebutton.ToggleButton;
 
@@ -37,7 +39,7 @@ public class RxHelper {
         return subject;
     }
 
-    public static Observable<Integer> getToggleWatcherObservable(@NonNull final MultiStateToggleButton button){
+    public static Observable<Integer> getToggleWatcherObservable(@NonNull final FeerlarocToggleButton button){
 
         final PublishSubject<Integer> subject = PublishSubject.create();
 

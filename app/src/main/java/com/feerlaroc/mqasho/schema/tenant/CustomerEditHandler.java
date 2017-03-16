@@ -14,13 +14,11 @@ import com.feerlaroc.zoho.retrofit.exception.ApiException;
 import com.feerlaroc.zoho.subscribers.CommonSubscriber;
 import com.feerlaroc.zoho.utils.DialogHelper;
 
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Func4;
 import rx.functions.Func5;
 import rx.schedulers.Schedulers;
 import rx.subjects.PublishSubject;
@@ -44,13 +42,14 @@ public class CustomerEditHandler {
 
     private CustomerEditView mView;
 
-    private TenantRecurringInvoiceHandler<HttpResult<List<Map<String, Object>>>> mRecurringInvoiceHandler;
+
+    private TenantInvoiceHandler mInvoiceHandler;
 
     public CustomerEditHandler(CustomerEditView view){
 
         mView = view;
         configureObservables();
-        mRecurringInvoiceHandler = new TenantRecurringInvoiceHandler();
+        mInvoiceHandler = new TenantInvoiceHandler();
     }
 
     public void create(){
@@ -63,7 +62,7 @@ public class CustomerEditHandler {
 
     private void createRecurringInvoice(){
 
-        mRecurringInvoiceHandler.saveInvoice()
+        mInvoiceHandler.saveInvoice()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(saveInvoiceSubscriber());

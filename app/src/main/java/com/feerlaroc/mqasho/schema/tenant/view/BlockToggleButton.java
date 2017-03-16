@@ -28,14 +28,7 @@ public class BlockToggleButton extends ReactiveToggleButton {
 
         try {
 
-            Integer int_value = 0;
-
-            if(value.toUpperCase().equals("A")||value.toUpperCase().equals("B")||value.toUpperCase().equals("C"))
-                int_value = 1;
-            else
-                int_value = 0;
-
-            RxToggleButton.selected(this).call(int_value);
+            RxToggleButton.selected(this).call(getIndex(value));
 
         } catch (Exception e) {
 

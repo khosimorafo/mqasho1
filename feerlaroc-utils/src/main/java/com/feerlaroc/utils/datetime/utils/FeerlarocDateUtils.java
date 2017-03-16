@@ -7,6 +7,8 @@ import android.text.format.DateUtils;
 
 import com.feerlaroc.utils.R;
 
+import org.joda.time.DateTime;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Formatter;
@@ -154,5 +156,9 @@ public class FeerlarocDateUtils extends DateUtils {
     }
 
 
+    public static String getMonthAndYear(DateTime date){
+
+        return date.toString("MMM") + "-" + date.getYear();
+    }
 
 }

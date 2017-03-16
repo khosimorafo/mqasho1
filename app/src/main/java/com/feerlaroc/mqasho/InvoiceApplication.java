@@ -7,6 +7,8 @@ import android.net.NetworkInfo;
 
 import com.feerlaroc.mqasho.common.dagger.ObjectGraphService;
 
+import net.danlew.android.joda.JodaTimeAndroid;
+
 import dagger.ObjectGraph;
 import mortar.MortarScope;
 import timber.log.Timber;
@@ -48,6 +50,8 @@ public class InvoiceApplication extends Application {
         {
             Timber.plant(new Timber.DebugTree());
         }
+
+        JodaTimeAndroid.init(this);
 
         Timber.i("Creating our Application");
     }

@@ -15,6 +15,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -29,6 +30,7 @@ import java.util.List;
  */
 public class WheelView extends ScrollView {
     public static final String TAG = WheelView.class.getSimpleName();
+
 
     public static class OnWheelViewListener {
         public void onSelected(int selectedIndex, String item) {
@@ -427,6 +429,25 @@ public class WheelView extends ScrollView {
         int expandSpec = View.MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, View.MeasureSpec.AT_MOST);
         view.measure(width, expandSpec);
         return view.getMeasuredHeight();
+    }
+
+    public void setSeletionText(String text) {
+
+        int s = getIndex(text);
+        setSeletion(s);
+    }
+
+    public int getIndex(String text){
+
+        int childSize = views.getChildCount();
+        for (int i = 0; i < childSize; i++) {
+            TextView itemView = (TextView) views.getChildAt(i);
+            if(itemView.getText().equals(text)){
+
+                return i - 1;
+            }
+        }
+        return -1;
     }
 
 }

@@ -48,7 +48,8 @@ dependencies {
     // Because RxAndroid releases are few and far between, it is recommended you also
     // explicitly depend on RxJava's latest version for bug fixes and new features.
     compile 'io.reactivex:rxjava:1.1.6'
-    compile 'joda-time:joda-time:2.9.4'
+    //compile 'joda-time:joda-time:2.9.4'
+    compile 'net.danlew:android.joda:2.9.7'
     compile group: 'com.opencsv', name: 'opencsv', version: '3.3'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
 }

@@ -163,10 +163,13 @@
                         mstb:mstbPrimaryColor="@color/color_divider"
                         mstb:mstbSecondaryColor="@color/color_draft"/>
 
-                    <Button
+                    <com.feerlaroc.mqasho.schema.tenant.view.RoomNumberReactiveTextView
                         android:id="@+id/btn_open_selector"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_margin="10dip"
+                        android:layout_height="50dp"
+                        android:background="@color/color_divider"
+                        android:gravity="center"
                         android:text="Open Room Selector"/>
 
                 </LinearLayout>
